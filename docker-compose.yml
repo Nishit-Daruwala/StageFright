@@ -1,0 +1,16 @@
+services:
+  stagefright:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      # Keeps downloaded model weights between runs.
+      - models:/models
+      # A fine-tuned emotion model from Kaggle, if present in ./models/emotion, replaces the default.
+      - ./models/emotion:/models/stagefright/emotion:ro
+
+volumes:
+  models:

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StageFright AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>StageFright AI</h1>
+      <p>Real-time public-speaking coach</p>
+    </div>
+    <div class="controls">
+      <span id="state" class="pill" data-state="idle">Connecting</span>
+      <button id="finish" class="ghost" hidden>Finish talk</button>
+      <button id="start" disabled>Start talk</button>
+    </div>
+  </header>
+
+  <div id="models" class="models"></div>
+  <div id="notice" class="notice" hidden></div>
+
+  <main>
+    <section class="card" id="live">
+      <h2>Your talk</h2>
+      <p class="hint">When you are done, say <strong>"Hey StageFright, I have finished my speech."</strong></p>
+      <canvas id="wave" width="900" height="110"></canvas>
+      <div class="meters">
+        <div class="tile"><span class="label">Time</span><span class="value" id="m-time">0:00</span></div>
+        <div class="tile"><span class="label">Level</span><span class="value" id="m-level">–</span><span class="unit">dB</span></div>
+        <div class="tile"><span class="label">Pitch</span><span class="value" id="m-pitch">–</span><span class="unit">Hz</span></div>
+        <div class="tile"><span class="label">Pace</span><span class="value" id="m-pace">–</span><span class="unit">wpm</span></div>
+      </div>
+      <div id="transcript" class="transcript" aria-live="polite"></div>
+    </section>
+
+    <section class="card" id="coach">
+      <h2>Coach</h2>
+      <p class="hint">Interrupt at any time by speaking. A headset keeps the coach's voice out of the mic.</p>
+      <div id="chat" class="chat" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <section class="card" id="report" hidden>
+    <h2>Delivery report</h2>
+    <div class="scores">
+      <div class="overall"><span class="value" id="overall">–</span><span class="label">overall / 100</span>
+        <span class="delta" id="overall-delta"></span></div>
+      <div id="score-bars" class="score-bars"></div>
+    </div>
+    <div id="stats" class="meters"></div>
+    <nav id="tabs" class="tabs" role="tablist"></nav>
+    <div id="plot" class="plot"></div>
+    <p id="plot-note" class="hint"></p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Runtime (also installed in the Docker image)
+fastapi
+uvicorn[standard]
+numpy
+scipy
+httpx
+faster-whisper
+silero-vad
+kokoro-onnx
+torch
+transformers

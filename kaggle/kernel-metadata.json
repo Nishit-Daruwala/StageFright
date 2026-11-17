@@ -1,0 +1,18 @@
+{
+  "id": "YOUR_KAGGLE_USERNAME/stagefright-emotion",
+  "title": "StageFright Emotion",
+  "code_file": "train_emotion.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "uwrfkaggler/ravdess-emotional-speech-audio",
+    "ejlok1/cremad",
+    "ejlok1/toronto-emotional-speech-set-tess",
+    "ejlok1/surrey-audiovisual-expressed-emotion-savee"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

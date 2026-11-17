@@ -1,0 +1,5 @@
+# Development only: tests, the simulated client and the Kaggle CLI
+-r requirements.txt
+pytest
+websockets
+kaggle
